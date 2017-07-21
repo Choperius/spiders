@@ -15,6 +15,7 @@ class BlizzardspiderSpider(scrapy.Spider):
 				'location': joblisting.css('Div.is-wrapped::text')[2].extract(),
 				'position': joblisting.css('Div.is-wrapped::text')[3].extract(),
 				'url': 'https://careers.blizzard.com' + joblisting.css('a.is-link::attr(href)').extract_first(),
+				'company': 'Blizzard Entertainment',
 			}
 			yield item
 
